@@ -4,17 +4,19 @@ int main() {
     int n, m, a, b;
     scanf("%d %d %d %d", &n, &m, &a, &b);
 
-    int minSum = 0;
+    int cost = 0;
     if (m * a <= b) {
-        minSum = n * a;
+        cost = n * a;
     } else {
-        minSum = (n / m) * b + (n % m) * a;
+        cost = ((n / m) * b) + ((n % m) * a);
         if ((n % m) * a > b) {
-            minSum = (n / m) * b + b;
+            // cost
+            cost = ((n / m) * b) + b;
         }
     }
 
-    printf("%d\n", minSum);
+    printf("%d\n", cost);
 
     return 0;
 }
+
